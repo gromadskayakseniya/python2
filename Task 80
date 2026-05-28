@@ -1,0 +1,9 @@
+n = int(input("Введите число: "))
+a = list(map(int, input("Введите список: ").split()))
+
+count = 0
+for i in range(n - 1):
+    if (a[i] + a[i+1]) % 2 == 0:
+        count += 1
+
+print(count)
