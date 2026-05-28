@@ -1,0 +1,19 @@
+print("Введите первый отсортированный список:")
+list1 = list(map(int, input().split()))
+print("Введите второй отсортированный список:")
+list2 = list(map(int, input().split()))
+
+i, j = 0, 0
+common = []
+
+while i < len(list1) and j < len(list2):
+    if list1[i] == list2[j]:
+        common.append(list1[i])
+        i += 1
+        j += 1
+    elif list1[i] < list2[j]:
+        i += 1
+    else:
+        j += 1
+
+print(*common)
