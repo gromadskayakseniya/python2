@@ -1,0 +1,21 @@
+n = int(input("Введите число N: "))
+list1 = list(map(int, input("Введите первый отсортированный список: ").split()))
+
+m = int(input("Введите число M: "))
+list2 = list(map(int, input("Введите второй отсортированный список: ").split()))
+
+merged = []
+i, j = 0, 0
+
+while i < n and j < m:
+    if list1[i] <= list2[j]:
+        merged.append(list1[i])
+        i += 1
+    else:
+        merged.append(list2[j])
+        j += 1
+
+merged.extend(list1[i:])
+merged.extend(list2[j:])
+
+print(merged)
