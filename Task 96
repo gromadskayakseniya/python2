@@ -1,0 +1,26 @@
+a = list(map(int, input("Введите список: ").split()))
+
+unique_vals = set(a)
+need = len(unique_vals)
+
+if need == 0:
+    print(0)
+else:
+    freq = {}
+    left = 0
+    min_len = n
+    distinct_count = 0
+
+    for right in range(n):
+        freq[a[right]] = freq.get(a[right], 0) + 1
+        if freq[a[right]] == 1:
+            distinct_count += 1
+
+        while distinct_count == need:
+            min_len = min(min_len, right - left + 1)
+            freq[a[left]] -= 1
+            if freq[a[left]] == 0:
+                distinct_count -= 1
+            left += 1
+
+    print(min_len)
