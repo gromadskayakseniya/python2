@@ -1,0 +1,16 @@
+n = int(input("Введите число: "))
+a = list(map(int, input("Введите список: ").split()))
+
+min_len = float('inf')
+found = False
+
+for i in range(n):
+    cur_sum = 0
+    for j in range(i, n):
+        cur_sum += a[j]
+        if cur_sum > 0:
+            min_len = min(min_len, j - i + 1)
+            found = True
+            break
+
+print(min_len if found else "nо")
