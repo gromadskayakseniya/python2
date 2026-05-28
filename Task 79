@@ -1,0 +1,13 @@
+n = int(input("Введите число: "))
+a = list(map(int, input("Введите список: ").split()))
+
+prefix_sum = 0
+found = False
+
+for i in range(n):
+    if a[i] == prefix_sum:
+        found = True
+        break
+    prefix_sum += a[i]
+
+print("Да" if found else "Нет")
