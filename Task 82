@@ -1,0 +1,16 @@
+n = int(input("Введите число: "))
+a = list(map(int, input("Введите список: ").split()))
+
+total = sum(a)
+if total % 3 != 0:
+    print("Нет")
+else:
+    target = total // 3
+    parts = 0
+    cur_sum = 0
+    for x in a:
+        cur_sum += x
+        if cur_sum == target:
+            parts += 1
+            cur_sum = 0
+    print("Да" if parts >= 3 else "Нет")
