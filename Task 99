@@ -1,6 +1,5 @@
 n = int(input("Введите число: "))
 a = list(map(int, input("Введите список: ").split()))
-
 if n <= 1:
     print(n)
 else:
