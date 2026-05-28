@@ -1,0 +1,15 @@
+n = int(input("Введите число: "))
+a = list(map(int, input("Введите список: ").split()))
+
+result = []
+for i in range(n):
+    found = False
+    for j in range(i + 1, n):
+        if a[j] == a[i]:
+            result.append(j - i)
+            found = True
+            break
+    if not found:
+        result.append(0)
+
+print(result)
