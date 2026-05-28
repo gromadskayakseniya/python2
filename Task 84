@@ -1,0 +1,11 @@
+n = int(input("Введите число: "))
+a = list(map(int, input("Введите список: ").split()))
+
+max_val = max(a)
+first = a.index(max_val)
+last = n - 1 - a[::-1].index(max_val)
+
+if first == last:
+    print(0)
+else:
+    print(len(set(a[first+1:last])))
