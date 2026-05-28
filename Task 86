@@ -1,0 +1,10 @@
+n = int(input("Введите число: "))
+a = list(map(int, input("Введите список: ").split()))
+
+inv_count = 0
+for i in range(n):
+    for j in range(i + 1, n):
+        if a[i] > a[j]:
+            inv_count += 1
+
+print(inv_count)
