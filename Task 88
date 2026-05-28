@@ -1,0 +1,12 @@
+n = int(input("Введите число: "))
+a = list(map(int, input("Введите список: ").split()))
+
+min_remove = n
+
+for left in range(n):
+    for right in range(left, n + 1):
+        remaining = a[:left] + a[right:]
+        if all(remaining[i] <= remaining[i + 1] for i in range(len(remaining) - 1)):
+            min_remove = min(min_remove, right - left)
+
+print(min_remove)
