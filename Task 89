@@ -1,0 +1,10 @@
+n = int(input("Введите число: "))
+a = list(map(int, input("Введите список: ").split()))
+
+second_largest_v = set()
+
+for i in range(n - 2):
+    triple = sorted([a[i], a[i + 1], a[i + 2]])
+    second_largest_v.add(triple[1])
+
+print(len(second_largest_v))
