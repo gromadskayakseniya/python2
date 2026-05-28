@@ -1,0 +1,28 @@
+n = int(input("Введите число: "))
+a = list(map(int, input("Введите список: ").split()))
+
+def almost_sorted(nums):
+    positions = []
+    for i in range(n - 1):
+        if nums[i] > nums[i + 1]:
+            positions.append(i)
+
+    if len(positions) == 0:
+        print("Да")
+        return
+    if len(positions) == 1:
+        i = positions[0]
+        nums[i], nums[i + 1] = nums[i + 1], nums[i]
+        if all(nums[j] <= nums[j + 1] for j in range(n - 1)):
+            print("Да")
+            return
+        nums[i], nums[i + 1] = nums[i + 1], nums[i]
+    if len(positions) == 2:
+        i, j = positions[0], positions[1] + 1
+        nums[i], nums[j] = nums[j], nums[i]
+        if all(nums[k] <= nums[k + 1] for k in range(n - 1)):
+            print("Да")
+            return
+    print("Нет")
+
+almost_sorted(a)
