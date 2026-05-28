@@ -1,0 +1,13 @@
+n = int(input("Введите число: "))
+a = list(map(int, input("Введите список: ").split()))
+
+freq = {}
+for x in a:
+    freq[x] = freq.get(x, 0) + 1
+
+max_count = max(freq.values())
+
+for x in a:
+    if freq[x] == max_count:
+        print(x, max_count)
+        break
